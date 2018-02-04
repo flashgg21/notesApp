@@ -26,9 +26,7 @@ module.exports = {
 		},
 
 		files: {                         // Dictionary of files
-	        'public_html/css/main.css': 'src/sass/main.scss',
-	        'public_html/wordpress/wp-content/themes/dragonfly/css/main.css': 'src/sass/main.scss'   // 'destination': 'source'
-	        
+	        'public_html/css/main.css': 'src/sass/main.scss',	        
 	       
 	    }
 	},

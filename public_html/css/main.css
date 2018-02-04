@@ -10,7 +10,6 @@
  * @author  GG
  * 
  */
-/*$font-key: "DINNextLTPro-Regular", Helvetica, Arial, sans-serif;*/
 /**
  * A bunch of mixins
  *
@@ -520,7 +519,7 @@ th {
   src: url("../fonts/NeutraText-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/NeutraText-Book.woff2") format("woff2"), url("../fonts/NeutraText-Book.woff") format("woff"), url("../fonts/NeutraText-Book.ttf") format("truetype");
 }
 body {
-  font-family: "NeutraText-Book", sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
   color: #3C3C3B;
   font-weight: normal;
@@ -531,13 +530,13 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "NeutraText-Bold", sans-serif;
+  font-family: sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
 strong {
-  font-family: "NeutraText-Bold", sans-serif;
+  font-family: sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -836,15 +835,6 @@ select {
   }
 }
 
-/* Styles for PACKERY */
-.hidden {
-  visibility: hidden;
-  width: 0px !important;
-  height: 0px !important;
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
 /* ==========================================================================
    Browse Happy prompt
    ========================================================================== */
@@ -984,7 +974,7 @@ footer .footer-nav p {
   }
 }
 footer .footer-nav a {
-  font-family: "NeutraText-Bold", sans-serif;
+  font-family: sans-serif;
 }
 @media (min-width: 993px) and (max-width: 1199px) {
   footer .footer-nav a {
@@ -992,7 +982,7 @@ footer .footer-nav a {
   }
 }
 footer .footer-nav p {
-  font-family: "NeutraText-Bold", sans-serif;
+  font-family: sans-serif;
 }
 
 /**
