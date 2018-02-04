@@ -1,0 +1,10 @@
+{
+  "index": {
+    "src": [
+      "src/templates/header.html",
+      "src/templates/app.html",
+      "src/templates/footer.html"
+    ],
+    "dest": "public_html/index.html"
+  }
+}

@@ -1,0 +1,139 @@
+/**
+ * NOTES APP Styles
+ *
+ * @author GG
+ * @date 3/2/18
+ */
+
+
+.main-wrapper {
+	
+	font-size: 12px;
+	
+	
+	ul {
+		list-style: none;
+		padding-left: 0;
+		position: relative;
+		
+		.title {
+			position: relative;
+			background: #eaeaea;
+			margin-bottom: 15px;
+			padding: 5px 15px 10px 15px;
+			border: 2px solid transparent;
+			transition: all 0.3s ease-in-out;
+			
+						
+			input {
+				width: 100%;
+				font-size: 14px;
+			    border: none;
+				background: #eaeaea;
+				transition: all 0.3s ease-in-out;
+				
+				&:focus {
+					outline: none;
+				}
+			}
+			
+			.date {
+				display: block;
+				font-size: 11px;
+				color: #a5a5a5;
+				text-decoration: none;
+			}
+			
+			.remove {
+				display: block;
+				position: absolute;
+				left: -7px;
+			    top: -8px;
+			    cursor: pointer;
+			    background: $red;
+			    border-radius: 23px;
+			    width: 23px;
+			    height: 23px;
+			    padding: 5px;
+			    transition: all 0.3s ease-in-out;
+			    
+			    &:hover {
+				    background: #000;
+			    }
+				
+				
+				&:before {
+					content: '';
+					display: block;
+					width: 14px;
+					height: 14px;
+					background-image: url('../img/icons/icon-basket.svg');
+					@include contain-bg;
+				}
+				
+				@include mobile-tablet {
+					display: block !important;
+				}
+			}
+		}
+
+		
+		
+		
+		textarea {
+			
+			&.note-content {
+				position: absolute;
+				top: 0;
+				right:0;
+				width: 75%;
+				font-size: 14px;
+				background: #fbfbfb;
+				border: none;
+				padding: 25px;
+				outline: none;
+				
+				@include mobile-tablet {
+					width: 95%;
+					position: relative;
+					margin: 10px auto;
+				}
+				
+				&:focus {
+					outline: none;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	.note-wrapper {
+		a {
+			text-decoration: none;
+			&.title-btn {
+				&.selected {
+					.title{
+						background: #f9f9f9;
+						border: 2px solid $red;
+					}
+					input{
+						background: #f9f9f9;
+					}
+				}
+			}
+		}
+	}
+		
+	.note-content {
+		display: block;
+		
+		&.hidden {
+			display: none;
+		}
+
+	}
+	
+	
+}

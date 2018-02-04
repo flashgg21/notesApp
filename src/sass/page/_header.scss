@@ -1,0 +1,36 @@
+/**
+ * All styles related to markup inside the header
+ *
+ * @author  GG
+ * 
+ */
+
+header {
+	
+	.header-inner {
+		
+		.notes-header {
+			background: #efefef;
+			min-height: 55px;
+			h1 {
+				font-size: 38px;
+				line-height: 55px;
+				margin: 0;
+				text-align: center;
+			}
+		}
+		
+	}
+	
+	#controls {
+			
+		margin-bottom: 25px;
+	
+		.new-note {
+			width: 100%;
+			@include default-btn;
+		}
+		
+	}
+	
+}

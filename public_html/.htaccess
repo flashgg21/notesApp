@@ -1,0 +1,30 @@
+Require all granted
+#Require ip 172.20.110.0/24
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+
+Redirect 301 /agency/services /what-we-do
+Redirect 301 /agency/clients /our-work
+Redirect 301 /about-us/key-people /who-we-are
+Redirect 301 /agency/tweets /whats-new
+Redirect 301 /agency/contact-us /get-in-touch
+Redirect 301 /case-studies/the-peoples-postcode-lottery /our-work/peoples-postcode-lottery
+Redirect 301 /case-studies/international-dm /our-work
+Redirect 301 /case-studies/biteback-sports /our-work
+Redirect 301 /agency/terms-and-conditions /terms-conditions
+Redirect 301 /agency/privacy-and-cookie-policy /privacy-cookie-policy
+Redirect 301 /case-studies/laing-the-jeweller /our-work
+Redirect 301 /case-studies/glenmore-lodge /our-work
+Redirect 301 /case-studies/beatitude /our-work
+Redirect 301 /case-studies/ladbrokes /our-work
+
+# END WordPress

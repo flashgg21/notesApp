@@ -1,0 +1,47 @@
+/**
+ * All styles related to markup inside the footer
+ *
+ * @author  GG
+ * 
+ */
+ 
+ footer {
+	color: $off-black;
+	padding: 50px 0;
+	clear: both;
+	
+	@include mobile-tablet {
+		padding: 15px 0;
+	}
+	
+		
+	.footer-nav {
+		padding-bottom:40px;
+
+		
+		p{
+			font-size: 18px;
+		}
+		
+		@include mobile-tablet {
+			text-align: center;
+		}
+
+				
+		 a {
+			 font-family: $font-bold;
+			 
+			 @include medium-desktop {
+				 font-size: 16px;
+			 }
+		 }
+		 p {
+			 font-family: $font-bold;
+		 }
+		
+		
+		
+	}
+	
+		
+}

@@ -1,0 +1,357 @@
+/**
+ * A bunch of mixins
+ *
+ * @author  GG
+ * 
+ */
+
+@mixin x-border-radius ($values) {
+	-webkit-border-radius: $values; // iOS Safari 3.2, Android 2.1
+	        border-radius: $values;
+}
+
+@mixin border-radius-bottom ($values) {
+    -webkit-border-bottom-right-radius: $values;
+    border-bottom-right-radius: $values;
+    -webkit-border-bottom-right-radius: $values;
+    border-bottom-left-radius: $values;
+}
+
+@mixin margin-center {
+	margin: 0 auto;
+	display: block;
+}
+
+
+/* Menu link hover underline */
+@mixin underline-hover {
+	&:hover {
+			text-decoration: none;
+		}
+		
+		&::after {
+		position: absolute;
+	    top: 100%;
+	    left: 0;
+	    width: 100%;
+	    height: 1px;
+	    background: #CF0970;
+	    content: '';
+	    opacity: 0;
+	    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+	    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+	    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+	    -webkit-transform: translateY(0px);
+	    -moz-transform: translateY(0px);
+	    transform: translateY(0px);
+	    
+		}
+		&:hover::after {
+			height: 3px;
+		    opacity: 1;
+		    -webkit-transform: translateY(5px);
+		    -moz-transform: translateY(5px);
+		    transform: translateY(5px);
+		}
+}
+
+
+
+/* Menu mixin */
+@mixin menu {
+		font-family: $font-main;
+		margin: 25px 0 20px;
+	ul{
+		list-style: none;
+		padding:0;
+		margin:0;
+		text-align: center;
+		display: inline-block;
+		width:100%;
+	}
+	
+	li {
+		padding:0;
+		text-align: center;
+		display: inline-block;
+		margin-right:35px;
+		
+		&:last-child {
+    		margin-right:0;
+		}
+	}
+	
+	a {
+		font-size: 16px;
+		text-transform: uppercase;
+		color: #000;
+		position: relative;
+		
+		@include underline-hover;
+	}
+	
+	//CHANGE TEXT COLOUR TO WHITE FOR HOME
+	&.mm-inverted {
+    	
+    	a {
+        	color:#FFF;
+    	}
+	}
+}
+
+// MIXINS FOR HEADER IMAGES AND BACKGROUNDS
+@mixin cover-bg {
+    background-size:cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+
+@mixin contain-bg {
+    background-size:contain;
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+
+@mixin default-banner {
+    @include cover-bg;
+    @include vertically-align;
+    min-height: 260px;
+    text-align: center;
+    color:#FFF;
+    
+    @include mobile-tablet {
+	    min-height:220px;
+    }
+}
+
+
+// STYLES FOR SCREENING TYPE BLOCK ON EVENT BANNER
+@mixin screening-type-block {
+        font-size:18px;
+        font-weight:400;
+        padding:12px 30px;
+        color:#FFF;
+        display: inline-block;
+        
+        @include mobile {
+	        font-size:14px;
+	        padding:8px 25px;
+        }
+}
+
+// For Category horizontal lists
+@mixin cats-list {
+    
+    h5 {
+        margin-top:25px;
+    }
+    
+    p {
+        margin-top:10px;
+    }
+    
+	ul {
+		 li { 
+			 padding:0 15px; 
+			 //border-right: 2px solid $dark-colour;
+			 
+			 
+			 .small & {
+				 padding: 0 5px;
+				 margin-right: 0;
+			 }
+			 
+			 &:first-child {
+				 padding-left: 0;
+				 margin-right: 0;
+			 }
+
+			 &:last-child {
+				border-right: none;
+				padding-right: 0;
+			 }
+			 a {
+				 border-bottom: $text-underline;
+				 color: $dark-colour;
+				 font-size: 22px;
+				 
+				@include mobile-tablet {
+					font-size: 16px;
+				}
+				 
+				 .small & {
+					 font-size: 16px;
+				 }
+				 
+				 &:hover {
+					 text-decoration: none;
+				 }
+			 }
+			 
+		 }
+		 
+	    .divider {
+			 display: inline-block;
+			 border-left: 1px solid #969696;
+			 border-right: 1px solid #969696;
+			 height: 1.8em;
+			 vertical-align: middle;
+		}
+	 }
+}
+
+
+
+//CENTRE ALIGN ITEMS VERTICALLY
+@mixin vertically-align {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+
+//INPUT AND SELECTS
+@mixin styled-input {
+    appearance: none;
+    -ms-appearance:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width:100%;
+    height:50px;
+    font-size:16px;
+    padding-left:10px;
+    border:none;
+    outline:none;
+    background:#FFF;
+    border:1px solid $off-black;
+    margin-bottom:25px;
+    
+    @include mobile {
+	    height:40px;
+	    font-size: 14px;
+    }
+}
+
+@mixin styled-select {
+    appearance: none;
+    -ms-appearance:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width:100%;
+    height:50px;
+    font-size:16px;
+    padding-left:10px;
+    border:none;
+    outline:none;
+    @include x-border-radius(0px);
+    background:#FFF url(../img/icon-down-select-black.svg) right center no-repeat;
+    background-size:28px 17px;
+    
+    @include mobile {
+	    height:40px;
+	    font-size: 14px;
+    }
+}
+
+
+
+//IMAGE OVERLAY
+
+@mixin overlay-tint {
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+}
+
+//SEARCH BOX
+@mixin search-box {
+	padding:30px;
+	background:rgba(0,0,0,0.5);
+	text-align: left;
+}
+
+
+//HEADER OVERLAYS
+
+@mixin header-graphic-right {
+	@include contain-bg;
+	background-image:url(../img/header-graphic-right.svg);
+	background-position:120% center;
+	background-size:60%;
+	width:100%;
+	
+	@include mobile {
+		background-size:90%;
+	}
+}
+
+@mixin header-graphic-centre {
+	@include contain-bg;
+	background-image:url(../img/header-graphic-centre.svg);
+	background-position:center center;
+	background-size:110%;
+	width:100%;
+	
+	@include mobile {
+		background-size:180%;
+	}
+}
+
+@mixin header-graphic-centre-contained {
+	@include contain-bg;
+	background-image:url(../img/header-graphic-centre-contained.svg);
+	background-position:center center;
+	width:100%;
+}
+
+
+// MEDIA QUERIES MIXINS
+
+@mixin sm-mobile {
+  @media (max-width: #{$small-mobile-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-md-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-landscape}) {
+    @content;
+  }
+}
+
+@mixin mobile-tablet {
+  @media (max-width: #{$desktop-md-width}) {
+    @content;
+  }
+}
+
+@mixin medium-desktop {
+  @media (min-width: #{$desktop-md-width + 1px}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin large-desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}

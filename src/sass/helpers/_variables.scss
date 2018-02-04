@@ -1,0 +1,46 @@
+/**
+ * Variables used throughout the project
+ *
+ * @author  GG
+ * 
+ */
+
+// Fonts
+$font-main: 'NeutraText-Book', sans-serif;
+/*$font-key: "DINNextLTPro-Regular", Helvetica, Arial, sans-serif;*/
+$font-bold: 'NeutraText-Bold', sans-serif;
+
+// <hr> color
+$hr-color: #ccc;
+
+// Text selection background color
+$selection-color: #00A9C5;
+
+// Text Color
+$body-font-color: #3C3C3B;
+
+// custom Colours
+$red: #e01616;
+$dark-red: #a91414;
+
+//container background color
+$container-bg:#ffffff;
+
+//black
+$off-black: #1A1A1A;
+
+//White
+$light-text: #ffffff;
+
+
+$full-width:100%;
+
+
+
+//Media Queries
+$small-mobile-width: 320px;
+$mobile-width: 767px;
+$tablet-width: 768px;
+$desktop-md-width: 992px;
+$tablet-landscape: 1024px;
+$desktop-width: 1200px;
